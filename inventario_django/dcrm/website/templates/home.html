@@ -11,8 +11,13 @@
                 <div class="card-body">
                     <h3 class="text-center md-4">Bienvenidos a este CRM</h3>
                     {% else %} <!-- Colocamos sino -->
-                    <h1 class="text-center md-4">Ingrese al Sistema</h1>
-                    <form method="POST" action="{% url 'home' %}">
+                    <div class="card shadow">
+                        <div class="card-body bg-white">
+                            <h3 class="text-center md-4">Ingrese al Sistema</h3>
+                        </div>
+                    </div>
+                    
+                    <form method="POST" action="{% url 'home' %}" class="bg-white" style="padding: 20px; border-radius: 10px; margin-top: 40px;">
                         {% csrf_token %}<!-- Token para validadr que el login sea correcto-->
                         <div class="row">
                             <div class="col-md-6 mb-3">
