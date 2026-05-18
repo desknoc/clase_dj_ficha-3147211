@@ -1,29 +1,43 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.urls import path
+from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
-# Esta es tu función Home que ya corregimos para evitar el bucle
 def home(request):
-    return render(request, 'home.html', {})
-
-# Aquí es donde estaba el error. Asegúrate de que se llame EXACTAMENTE login_user
-def login_user(request):
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username = username, password = password)
         if user is not None:
             login(request, user)
-            messages.success(request, "¡Sesión iniciada!")
+            messages.success(request, "Bienvenido al CMR Credenciales correctas! 🙂😎😁")
             return redirect('home')
         else:
-            messages.error(request, "Usuario o contraseña incorrectos.")
-            return redirect('login') # Asegúrate de tener una URL llamada 'login'
-            
-    return render(request, 'login.html', {}) # O el nombre de tu template de login
+            messages.error(request, "Credenciales invalidas 😅🥲🫠")
+            return redirect('home')
+    else:
+        return render(request, 'home.html')
 
-def logout_user(request):
+# Create your views here.
+
+def loginUser(request):
+    pass
+
+
+# El logout de la aplicación
+
+def logoutUser(request):
     logout(request)
-    messages.success(request, "Sesión cerrada.")
+    messages.success(request, "Has cerrado sesión") # Al 
     return redirect('home')
+
+def register(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = User.objects.create_user(username = username, password = password)
+        return redirect('login')
+    return render(request, 'registro.html', {})
+    
