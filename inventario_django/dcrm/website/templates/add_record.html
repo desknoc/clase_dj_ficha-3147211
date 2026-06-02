@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Agregar Registro{% endblock title %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  <div class="card shadow bg-dark text-light border-secondary">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Agregar Registro</h2>
+      <form method="POST" action="{% url 'add_record' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-light w-100">
+          Agregar Registro
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

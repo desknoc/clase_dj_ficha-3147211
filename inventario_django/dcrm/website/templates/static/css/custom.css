@@ -1,0 +1,395 @@
+/* ============================================================
+   💙 EMO-DARK THEME — #1e90ff Dodger Blue (sin neon)
+   Fondo ultra oscuro + azul sólido. Sin glow, sin neon.
+   ============================================================ */
+
+:root {
+    --blue: #1e90ff;
+    --blue-hover: #3da3ff;
+    --blue-bg: rgba(30, 144, 255, 0.08);
+    --dark-deeper: #070707;
+    --dark-card: #0b0b0b;
+    --border-dim: #151a25;
+    --text-muted-custom: #556;
+    --text-soft: #bbb;
+    --text-bright: #eee;
+}
+
+/* --- GLOBAL --- */
+body {
+    background-color: var(--dark-deeper) !important;
+    color: var(--text-soft) !important;
+}
+
+/* ============================================================
+   CARDS — borde azul limpio, sin glow
+   ============================================================ */
+.card {
+    background-color: var(--dark-card) !important;
+    border-color: var(--border-dim) !important;
+    border-top: 2px solid var(--blue) !important;
+    transition: all 0.35s ease;
+}
+
+.card:hover {
+    border-color: var(--blue) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+/* Outline general → azul, texto blanco */
+.btn-outline-light {
+    color: #fff !important;
+    border-color: var(--blue) !important;
+    background: transparent !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    color: #fff !important;
+    background: var(--blue) !important;
+    border-color: var(--blue) !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-light:active {
+    transform: translateY(0) !important;
+}
+
+/* Danger — texto blanco */
+.btn-danger {
+    color: #fff !important;
+    border: none !important;
+    background: linear-gradient(135deg, #dc3545, #a02030) !important;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   NAVBAR — #1e90ff full, sin sombra neón
+   ============================================================ */
+.navbar {
+    background: linear-gradient(135deg, #1a8aff 0%, #1e90ff 40%, #0073e6 100%) !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+/* Nav links — blancos sobre azul */
+.nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px;
+    margin: 0 2px;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+}
+
+/* Dropdown — fondo oscuro para contraste */
+.dropdown-menu-dark {
+    background-color: #0d0d0d !important;
+    border: 1px solid var(--border-dim) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    border-top: 2px solid var(--blue);
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #999 !important;
+    transition: all 0.25s ease;
+    padding: 0.6rem 1.2rem;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+    background-color: var(--blue-bg) !important;
+    color: var(--blue) !important;
+    padding-left: 1.6rem;
+}
+
+/* Toggler — blanco sobre azul */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ============================================================
+   TABLAS — azul limpio, sin glow
+   ============================================================ */
+.table-dark {
+    --bs-table-bg: var(--dark-card) !important;
+    --bs-table-border-color: var(--border-dim) !important;
+    --bs-table-striped-bg: #0e0e0e !important;
+    --bs-table-hover-bg: var(--blue-bg) !important;
+}
+
+.table-dark thead {
+    background: linear-gradient(180deg, #0d1520, var(--dark-card));
+}
+
+.table-dark thead th {
+    color: var(--blue) !important;
+    border-bottom: 2px solid var(--blue) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 1rem 0.75rem;
+}
+
+.table-dark tbody tr {
+    transition: all 0.25s ease;
+    border-left: 2px solid transparent;
+}
+
+.table-dark tbody tr:hover {
+    border-left: 2px solid var(--blue);
+    background-color: var(--blue-bg) !important;
+}
+
+.table > :not(caption) > * > * {
+    border-bottom-color: var(--border-dim);
+    padding: 0.75rem;
+}
+
+/* ============================================================
+   FORMULARIOS
+   ============================================================ */
+.form-control {
+    background-color: var(--dark-card) !important;
+    border: 1px solid var(--border-dim) !important;
+    color: var(--text-bright) !important;
+    transition: all 0.3s ease;
+    padding: 0.65rem 1rem;
+}
+
+.form-control:focus {
+    background-color: var(--dark-card) !important;
+    border-color: var(--blue) !important;
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+.form-control::placeholder {
+    color: #444 !important;
+    font-style: italic;
+}
+
+.form-label {
+    color: var(--blue) !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+}
+
+/* ============================================================
+   ALERTAS — barra lateral azul
+   ============================================================ */
+.alert {
+    border-radius: 0 !important;
+    border: none !important;
+    border-left: 4px solid var(--blue) !important;
+    background-color: rgba(30, 144, 255, 0.06) !important;
+    color: var(--text-soft) !important;
+    padding: 1rem 1.2rem;
+}
+
+.alert-success {
+    border-left-color: #00cc88 !important;
+    background-color: rgba(0, 204, 136, 0.06) !important;
+    color: #00cc88 !important;
+}
+
+.alert-error,
+.alert-danger {
+    border-left-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.06) !important;
+    color: #ff6b7a !important;
+}
+
+.alert-warning {
+    border-left-color: #ffaa00 !important;
+    background-color: rgba(255, 170, 0, 0.06) !important;
+    color: #ffaa00 !important;
+}
+
+.alert-info {
+    border-left-color: var(--blue) !important;
+    background-color: rgba(30, 144, 255, 0.06) !important;
+    color: var(--blue) !important;
+}
+
+/* close button en alertas */
+.btn-close {
+    filter: brightness(0) invert(0.7);
+    transition: filter 0.3s ease;
+}
+.btn-close:hover {
+    filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   ENLACES — azul sólido
+   ============================================================ */
+a {
+    color: var(--blue) !important;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--blue-hover) !important;
+}
+
+/* ============================================================
+   TÍTULOS
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-bright) !important;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h3 {
+    color: var(--blue) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--border-dim);
+    padding-bottom: 0.6rem;
+}
+
+/* ============================================================
+   BORDES
+   ============================================================ */
+.border-secondary {
+    border-color: var(--border-dim) !important;
+}
+
+/* ============================================================
+   TEXTO MUTED
+   ============================================================ */
+.text-muted {
+    color: var(--text-muted-custom) !important;
+    font-style: italic;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-deeper);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-dim);
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+/* ============================================================
+   SELECTION — azul
+   ============================================================ */
+::selection {
+    background: rgba(30, 144, 255, 0.35);
+    color: #fff;
+}
+
+/* ============================================================
+   FOCUS GLOBAL
+   ============================================================ */
+*:focus-visible {
+    outline: 2px solid var(--blue) !important;
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   TABLA — botón danger dentro de tabla
+   ============================================================ */
+.table .btn-danger {
+    color: #fff !important;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   CONTAINER — entrada sutil
+   ============================================================ */
+.container {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

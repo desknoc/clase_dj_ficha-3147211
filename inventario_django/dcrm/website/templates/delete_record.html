@@ -1,0 +1,16 @@
+{% {% extends "base.html" %}%} {% block title %}Eliminar Registro{% endblock
+title %} {% block content %}
+<div class="col-md-6 offset-md-3">
+  <div class="card shadow bg-dark text-light border-secondary">
+    <div class="card-body">
+      <h2 class="text-center mb-4">Eliminar Registro</h2>
+      <form method="POST" action="{% url 'delete_record' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-light w-100">
+          Eliminar Registro
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
